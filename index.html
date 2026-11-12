@@ -3,33 +3,36 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>ECO KROM-AR · Pintura fotoluminiscente argentina</title>
-<meta name="description" content="ECO KROM-AR: pintura fotoluminiscente de fabricación nacional. Se carga con la luz del día y brilla durante horas, sin electricidad. Para sendas, bicisendas, evacuación e industria.">
-<meta property="og:title" content="ECO KROM-AR · Ilumina la noche sin electricidad">
+<title>EcoKrom® · Pintura fotoluminiscente · Tecnología del futuro</title>
+<meta name="description" content="EcoKrom®: pintura fotoluminiscente de fabricación nacional. Se carga con la luz del día y brilla durante horas, sin electricidad. Para sendas, bicisendas, evacuación e industria.">
+<meta property="og:title" content="EcoKrom® · Ilumina la noche sin electricidad">
+<meta property="og:image" content="og.jpg">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 <meta property="og:description" content="Pintura fotoluminiscente argentina para sendas, bicisendas, evacuación e industria.">
-<meta name="theme-color" content="#070b0f">
+<meta name="theme-color" content="#030503">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
 <style>
 /* =========================================================
    TEMA: noche (por defecto) y día. El interruptor cambia data-mode en <html>.
    ========================================================= */
 :root{
-  --glow-green:#3cf2a6;
+  --brand:#20fc02;
   --radius:18px;
   --max:1180px;
   --ease:cubic-bezier(.2,.7,.2,1);
 }
 html[data-mode="night"]{
-  --bg:#070b0f; --bg2:#0b1117; --card:#0f161d; --card2:#121b23; --line:#1d2832;
-  --text:#eef3f1; --muted:#93a1a8; --accent:#3cf2a6; --accent-ink:#04140d;
-  --accent-soft:rgba(60,242,166,.10); --title-glow:0 0 22px rgba(60,242,166,.55);
+  --bg:#030503; --bg2:#080c08; --card:#0d120d; --card2:#111811; --line:#1c261c;
+  --text:#f2f5f1; --muted:#9aa699; --accent:#20fc02; --accent-ink:#031200;
+  --accent-soft:rgba(32,252,2,.09); --title-glow:0 0 18px rgba(32,252,2,.6),0 0 42px rgba(32,252,2,.25);
 }
 html[data-mode="day"]{
-  --bg:#f3f6f5; --bg2:#e9efed; --card:#ffffff; --card2:#f7faf9; --line:#dbe4e1;
-  --text:#0d1714; --muted:#56656a; --accent:#0f9d6b; --accent-ink:#ffffff;
-  --accent-soft:rgba(15,157,107,.09); --title-glow:none;
+  --bg:#f4f7f3; --bg2:#eaf0e8; --card:#ffffff; --card2:#f7faf6; --line:#d9e3d6;
+  --text:#0c150b; --muted:#566453; --accent:#127a00; --accent-ink:#ffffff;
+  --accent-soft:rgba(18,122,0,.08); --title-glow:none;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
@@ -38,17 +41,18 @@ img,svg{display:block;max-width:100%}
 a{color:inherit;text-decoration:none}
 .wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
 section{padding:96px 0;position:relative}
-.eyebrow{font-size:.78rem;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:var(--accent);margin-bottom:14px}
-h1,h2,h3{line-height:1.08;letter-spacing:-.025em}
+.eyebrow{font-family:Montserrat,Inter,sans-serif;font-size:.78rem;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:var(--accent);margin-bottom:14px}
+h1,h2,h3{font-family:Montserrat,Inter,sans-serif;line-height:1.08;letter-spacing:-.025em}
 h2{font-size:clamp(2rem,4.2vw,3.1rem);font-weight:800;margin-bottom:18px}
 h3{font-size:1.12rem;font-weight:700}
 .lead{font-size:1.12rem;color:var(--muted);max-width:640px}
 .glow{color:var(--accent);text-shadow:var(--title-glow);transition:text-shadow .6s,color .6s}
-.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 22px;border-radius:12px;font-weight:700;font-size:.96rem;border:1px solid transparent;cursor:pointer;transition:transform .2s,box-shadow .3s,background .3s;font-family:inherit}
+.btn{font-family:Montserrat,Inter,sans-serif;display:inline-flex;align-items:center;gap:8px;padding:13px 22px;border-radius:12px;font-weight:700;font-size:.96rem;border:1px solid transparent;cursor:pointer;transition:transform .2s,box-shadow .3s,background .3s;font-family:inherit}
 .btn-primary{background:var(--accent);color:var(--accent-ink)}
-html[data-mode="night"] .btn-primary{box-shadow:0 0 0 0 rgba(60,242,166,0),0 8px 30px rgba(60,242,166,.25)}
+html[data-mode="night"] .btn-primary{box-shadow:0 0 0 0 rgba(32,252,2,0),0 8px 30px rgba(32,252,2,.28)}
 .btn-primary:hover{transform:translateY(-2px)}
 .btn-ghost{border-color:var(--line);color:var(--text);background:transparent}
+.btn,.menu .btn{font-family:Montserrat,Inter,sans-serif}
 .btn-ghost:hover{border-color:var(--accent)}
 .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);transition:background .6s,border-color .3s,transform .3s}
 .note{font-size:.8rem;color:var(--muted)}
@@ -57,8 +61,11 @@ html[data-mode="night"] .btn-primary{box-shadow:0 0 0 0 rgba(60,242,166,0),0 8px
 header{position:fixed;inset:0 0 auto 0;z-index:50;transition:background .4s,backdrop-filter .4s,border-color .4s;border-bottom:1px solid transparent}
 header.scrolled{background:color-mix(in srgb,var(--bg) 82%,transparent);backdrop-filter:blur(14px);border-color:var(--line)}
 .nav{display:flex;align-items:center;justify-content:space-between;height:72px}
-.logo{font-weight:900;font-size:1.2rem;letter-spacing:-.02em}
-.logo span{color:var(--accent);text-shadow:var(--title-glow)}
+.logo{display:flex;align-items:center;gap:10px}
+.logo img{width:42px;height:42px;border-radius:50%;box-shadow:0 0 14px rgba(32,252,2,.45)}
+.wordmark{font-family:Montserrat,Inter,sans-serif;font-weight:800;font-size:1.32rem;letter-spacing:-.035em;color:var(--accent);text-shadow:var(--title-glow);line-height:1}
+.wordmark sup{font-size:.45em;font-weight:700;margin-left:1px;vertical-align:super}
+.tagline{font-family:Montserrat,Inter,sans-serif;font-weight:400;letter-spacing:.22em;font-size:.62rem;color:var(--muted);display:block;margin-top:3px}
 .menu{display:flex;gap:26px;align-items:center;font-size:.93rem;color:var(--muted)}
 .menu a:hover{color:var(--text)}
 .menu .btn{color:var(--accent-ink);padding:10px 18px}
@@ -70,7 +77,7 @@ header.scrolled{background:color-mix(in srgb,var(--bg) 82%,transparent);backdrop
 .toggle button[aria-pressed="true"]{background:var(--accent);color:var(--accent-ink)}
 
 /* ---------- Escena ilustrada (ruta con pintura) ---------- */
-.scene{--sky1:#04070b;--sky2:#0c1622;--ground:#071009;--road:#0b0f13;--tree:#03060a;--paint:#3cf2a6;--glowc:rgba(60,242,166,.85);--stars:1;--sun:0;--moon:1;--lamp:0}
+.scene{--sky1:#020302;--sky2:#0a120c;--ground:#050a05;--road:#0a0d0a;--tree:#020402;--paint:#3bff22;--glowc:rgba(32,252,2,.85);--stars:1;--sun:0;--moon:1;--lamp:0}
 html[data-mode="day"] .scene:not(.scene-night),.scene.scene-day{--sky1:#8ccbee;--sky2:#e8f5fb;--ground:#7c9a62;--road:#6e7377;--tree:#46703c;--paint:#e9efe9;--glowc:transparent;--stars:0;--sun:1;--moon:0}
 .scene svg{width:100%;height:100%}
 .scene .s1{stop-color:var(--sky1);transition:stop-color 1s}
@@ -92,13 +99,18 @@ html[data-mode="day"] .scene:not(.scene-night),.scene.scene-day{--sky1:#8ccbee;-
 .hero .scene{position:absolute;inset:0;z-index:0}
 .hero::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,var(--bg) 0%,color-mix(in srgb,var(--bg) 82%,transparent) 38%,transparent 72%),linear-gradient(0deg,var(--bg) 0%,transparent 30%);transition:background .6s}
 .hero .wrap{position:relative;z-index:2;width:100%}
+.hero-badge{position:absolute;z-index:2;right:max(24px,calc((100vw - var(--max))/2 + 24px));top:120px;width:min(30vw,360px);aspect-ratio:1;border-radius:50%;box-shadow:0 0 40px rgba(32,252,2,.35),0 0 110px rgba(32,252,2,.18);animation:pulse 5s ease-in-out infinite}
+.hero-badge img{width:100%;height:100%;border-radius:50%}
+@keyframes pulse{50%{box-shadow:0 0 60px rgba(32,252,2,.5),0 0 140px rgba(32,252,2,.25)}}
+.hero .scene .sun,.hero .scene .moon{display:none}
+html[data-mode="day"] .hero-badge{box-shadow:0 20px 50px rgba(0,0,0,.25);animation:none}
 .hero h1{font-size:clamp(2.7rem,7vw,5.6rem);font-weight:900;margin:8px 0 22px;max-width:760px}
 .hero p{font-size:1.18rem;color:var(--muted);max-width:540px;margin-bottom:34px}
 .hero .ctas{display:flex;gap:12px;flex-wrap:wrap}
 .stats{position:relative;z-index:2;margin-top:90px;display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line);border-radius:var(--radius);background:color-mix(in srgb,var(--card) 88%,transparent);backdrop-filter:blur(10px)}
 .stat{padding:26px 28px;border-right:1px solid var(--line)}
 .stat:last-child{border-right:0}
-.stat b{display:block;font-size:2rem;font-weight:800;color:var(--accent);text-shadow:var(--title-glow);letter-spacing:-.02em}
+.stat b{font-family:Montserrat,Inter,sans-serif;display:block;font-size:2rem;font-weight:800;color:var(--accent);text-shadow:var(--title-glow);letter-spacing:-.02em}
 .stat span{color:var(--muted);font-size:.9rem}
 
 /* ---------- Producto ---------- */
@@ -125,7 +137,7 @@ html[data-mode="day"] .scene:not(.scene-night),.scene.scene-day{--sky1:#8ccbee;-
 /* ---------- Cómo funciona ---------- */
 .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:44px}
 .step{padding:30px}
-.step .n{font-size:3rem;font-weight:900;color:var(--accent);text-shadow:var(--title-glow);line-height:1;margin-bottom:14px}
+.step .n{font-family:Montserrat,Inter,sans-serif;font-size:3rem;font-weight:900;color:var(--accent);text-shadow:var(--title-glow);line-height:1;margin-bottom:14px}
 .step p{color:var(--muted);margin-top:8px}
 .cycle{margin-top:20px;padding:28px 30px;display:grid;grid-template-columns:1.3fr 1fr;gap:30px;align-items:center}
 .cycle p{color:var(--muted)}
@@ -134,7 +146,7 @@ html[data-mode="day"] .scene:not(.scene-night),.scene.scene-day{--sky1:#8ccbee;-
 .meter .band{position:absolute;inset:0;animation:sky 8s infinite linear}
 @keyframes sky{0%,100%{background:#8ccbee}40%{background:#8ccbee}55%{background:#0a1420}90%{background:#05080c}}
 .meter .stripe{position:absolute;left:12%;right:12%;height:22px;top:50%;margin-top:-11px;border-radius:6px;animation:paint 8s infinite linear}
-@keyframes paint{0%,40%{background:#e8efe9;box-shadow:none}55%{background:#3cf2a6;box-shadow:0 0 22px #3cf2a6,0 0 50px rgba(60,242,166,.6)}90%{background:#1f8f63;box-shadow:0 0 10px rgba(60,242,166,.35)}100%{background:#e8efe9;box-shadow:none}}
+@keyframes paint{0%,40%{background:#e8efe9;box-shadow:none}55%{background:#3bff22;box-shadow:0 0 22px #20fc02,0 0 50px rgba(32,252,2,.6)}90%{background:#1a9a05;box-shadow:0 0 10px rgba(32,252,2,.35)}100%{background:#e8efe9;box-shadow:none}}
 .meter .lbl{position:absolute;bottom:10px;left:14px;font-size:.78rem;font-weight:700;color:#fff;text-shadow:0 1px 3px rgba(0,0,0,.6)}
 .meter .lbl::after{content:"Día · carga";animation:lbl 8s infinite steps(1)}
 @keyframes lbl{0%{content:"Día · carga"}48%{content:"Anochece · emite"}75%{content:"Madrugada · brillo gradual"}}
@@ -152,7 +164,7 @@ html[data-mode="day"] .scene:not(.scene-night),.scene.scene-day{--sky1:#8ccbee;-
 /* ---------- Beneficios ---------- */
 .benefits{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:44px}
 .benefit{padding:28px}
-.benefit b{display:block;font-size:2.4rem;font-weight:900;color:var(--accent);text-shadow:var(--title-glow);letter-spacing:-.03em}
+.benefit b{font-family:Montserrat,Inter,sans-serif;display:block;font-size:2.4rem;font-weight:900;color:var(--accent);text-shadow:var(--title-glow);letter-spacing:-.03em}
 .benefit h3{margin:4px 0 6px}
 .benefit p{color:var(--muted)}
 
@@ -246,6 +258,8 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
   .menu a{padding:12px 4px}
   .menu .btn{justify-content:center;margin-top:8px}
   .burger{display:block}
+  .hero-badge{display:none}
+  .tagline{font-size:.56rem;letter-spacing:.16em}
   .steps,.apps,.benefits,.audience,.works,.row2{grid-template-columns:1fr}
   .hero::after{background:linear-gradient(0deg,var(--bg) 8%,color-mix(in srgb,var(--bg) 70%,transparent) 60%,color-mix(in srgb,var(--bg) 40%,transparent) 100%)}
   .stats{margin-top:56px}
@@ -262,7 +276,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
 <!-- ================= HEADER ================= -->
 <header id="top">
   <div class="wrap nav">
-    <a href="#" class="logo">ECO KROM<span>-AR</span></a>
+    <a href="#" class="logo" aria-label="EcoKrom, inicio"><img src="logo-sm.webp" alt="" width="42" height="42"><span><span class="wordmark">EcoKrom<sup>®</sup></span><span class="tagline">Tecnología del futuro.</span></span></a>
     <nav class="menu" id="menu">
       <a href="#producto">Producto</a>
       <a href="#como-funciona">Cómo funciona</a>
@@ -287,8 +301,9 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
 <!-- ================= HERO ================= -->
 <section class="hero">
   <div class="scene" data-scene></div>
+  <div class="hero-badge"><img src="logo.webp" alt="Logo EcoKrom® — Tecnología del futuro." width="360" height="360"></div>
   <div class="wrap">
-    <div class="eyebrow">Pintura fotoluminiscente · Industria argentina</div>
+    <div class="eyebrow">Pintura fotoluminiscente argentina</div>
     <h1>Ilumina la noche<br><span class="glow">sin electricidad.</span></h1>
     <p>Se carga con la luz del día y brilla durante horas. Para sendas, bicisendas, evacuación e industria.</p>
     <div class="ctas">
@@ -309,7 +324,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
   <div class="wrap split">
     <div class="prose reveal">
       <div class="eyebrow">El producto</div>
-      <h2>¿Qué es ECO&nbsp;KROM&#8209;AR?</h2>
+      <h2>¿Qué es <span class="glow">EcoKrom®</span>?</h2>
       <p>Es una <strong>pintura fotoluminiscente</strong>: durante el día absorbe luz natural o artificial, la almacena y por la noche la libera como un brillo visible <strong>durante horas, sin cables ni energía eléctrica</strong>.</p>
       <p>Formulada sobre base poliuretánica para asfalto y superficies de tránsito, está pensada para <strong>sendas peatonales, bicisendas y señalización de seguridad</strong>, con ahorro de energía y bajo impacto ambiental.</p>
       <div class="chips">
@@ -383,7 +398,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
       <div class="card benefit reveal"><b>🛡</b><h3>Más seguridad</h3><p>Mejor orientación para peatones y ciclistas de noche.</p></div>
       <div class="card benefit reveal"><b>🧰</b><h3>Aplicación simple</h3><p>Se aplica como una pintura de demarcación, sin obra civil.</p></div>
     </div>
-    <p class="note" style="margin-top:18px">* Valores de referencia de pinturas fotoluminiscentes profesionales. Se actualizarán con los resultados de ensayo de ECO KROM-AR.</p>
+    <p class="note" style="margin-top:18px">* Valores de referencia de pinturas fotoluminiscentes profesionales. Se actualizarán con los resultados de ensayo de EcoKrom®.</p>
   </div>
 </section>
 
@@ -549,8 +564,8 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
 
 <footer>
   <div class="wrap">
-    <div><b style="color:var(--text)">ECO KROM<span style="color:var(--accent)">-AR</span></b> · Pintura fotoluminiscente · Industria argentina</div>
-    <div>© <span id="year"></span> ECO KROM-AR · Sitio desarrollado por Grand Tech Informática</div>
+    <div><b class="wordmark" style="font-size:1rem">EcoKrom<sup>®</sup></b> · Tecnología del futuro. · Pintura fotoluminiscente · Industria argentina</div>
+    <div>© <span id="year"></span> EcoKrom® · Marca registrada · Sitio desarrollado por Grand Tech Informática</div>
   </div>
 </footer>
 
@@ -617,7 +632,7 @@ function setMode(m){
   root.dataset.mode = m;
   bDay.setAttribute("aria-pressed", m === "day");
   bNight.setAttribute("aria-pressed", m === "night");
-  document.querySelector('meta[name="theme-color"]').content = m === "day" ? "#f3f6f5" : "#070b0f";
+  document.querySelector('meta[name="theme-color"]').content = m === "day" ? "#f4f7f3" : "#030503";
   try { localStorage.setItem("ek-mode", m); } catch(e){}
 }
 bDay.onclick = () => setMode("day");
@@ -661,7 +676,7 @@ function calc(){
   $("rPaint").textContent = fmt(paint, 1) + " kg";
   $("rGlow").textContent = color === "Verde" ? "hasta ~10 h" : "~6 h";
   const detail = type === "line" ? `${fmt(+$("cLen").value)} m lineales x ${$("cWidth").value} cm` : `${fmt(area,1)} m²`;
-  $("calcWa").href = wa(`Hola, quiero un presupuesto de ECO KROM-AR.\nProyecto: ${detail} (${fmt(area,1)} m²)\nColor: ${color}\nEstimado: ${fmt(base,1)} kg de base y ${fmt(paint,1)} kg de pintura.`);
+  $("calcWa").href = wa(`Hola, quiero un presupuesto de EcoKrom®.\nProyecto: ${detail} (${fmt(area,1)} m²)\nColor: ${color}\nEstimado: ${fmt(base,1)} kg de base y ${fmt(paint,1)} kg de pintura.`);
 }
 ["cType","cLen","cWidth","cArea","cColor"].forEach(id => $(id).addEventListener("input", calc));
 calc();
@@ -679,7 +694,7 @@ function savings(){
 savings();
 
 /* ---------- Contacto ---------- */
-$("waLink").href = $("waFloat").href = wa("Hola, quiero información sobre la pintura fotoluminiscente ECO KROM-AR.");
+$("waLink").href = $("waFloat").href = wa("Hola, quiero información sobre la pintura fotoluminiscente EcoKrom®.");
 $("mailLink").href = "mailto:" + CONFIG.email;
 $("mailText").textContent = CONFIG.email;
 document.querySelectorAll("[data-uso]").forEach(a => a.addEventListener("click", () => { $("fUso").value = a.dataset.uso; }));

@@ -1,6 +1,6 @@
-# ECO KROM-AR
+# EcoKrom®
 
-Sitio web informativo de **ECO KROM-AR**, pintura fotoluminiscente de fabricación nacional.
+Sitio web informativo de **EcoKrom®** (Tecnología del futuro.), pintura fotoluminiscente de fabricación nacional. Marca registrada.
 
 Sitio estático en un solo archivo (`index.html`), publicado con GitHub Pages.
 
