@@ -125,7 +125,8 @@ html[data-mode="day"] .hero-badge{box-shadow:0 20px 50px rgba(0,0,0,.25);animati
 
 /* ---------- Comparador antes / después ---------- */
 .compare{position:relative;aspect-ratio:16/11;border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);user-select:none;touch-action:pan-y}
-.compare .layer{position:absolute;inset:0}
+.compare .layer{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.compare.fill{position:absolute;inset:0;aspect-ratio:auto!important;border:0;border-radius:0}
 .compare .night{clip-path:inset(0 0 0 50%)}
 .compare .handle{position:absolute;top:0;bottom:0;left:50%;width:2px;background:#fff;transform:translateX(-1px);pointer-events:none;box-shadow:0 0 12px rgba(255,255,255,.6)}
 .compare .handle::after{content:"⇆";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:42px;height:42px;border-radius:50%;background:#fff;color:#0b1117;display:grid;place-items:center;font-weight:800}
@@ -139,7 +140,7 @@ html[data-mode="day"] .hero-badge{box-shadow:0 20px 50px rgba(0,0,0,.25);animati
 .step{padding:30px}
 .step .n{font-family:Montserrat,Inter,sans-serif;font-size:3rem;font-weight:900;color:var(--accent);text-shadow:var(--title-glow);line-height:1;margin-bottom:14px}
 .step p{color:var(--muted);margin-top:8px}
-.cycle{margin-top:20px;padding:28px 30px;display:grid;grid-template-columns:1.3fr 1fr;gap:30px;align-items:center}
+.cycle{margin-top:20px;padding:28px 30px;display:grid;grid-template-columns:1fr 1.2fr;gap:30px;align-items:center}
 .cycle p{color:var(--muted)}
 .cycle h3{color:var(--accent);text-shadow:var(--title-glow);margin-bottom:8px}
 .meter{height:150px;position:relative;border-radius:14px;overflow:hidden;background:var(--bg2);border:1px solid var(--line)}
@@ -170,7 +171,12 @@ html[data-mode="day"] .hero-badge{box-shadow:0 20px 50px rgba(0,0,0,.25);animati
 .cat:nth-child(even) .cat-img{order:2}
 .cat-img{position:relative;min-height:360px;background:repeating-linear-gradient(45deg,var(--bg2) 0 12px,var(--card2) 12px 24px);border-right:1px solid var(--line)}
 .cat:nth-child(even) .cat-img{border-right:0;border-left:1px solid var(--line)}
-.cat-img img,.work .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.cat-img img,.work .ph>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.cat-img.contain{background:#2b2b2b}
+.cat-img.contain img{object-fit:contain}
+.vid{margin:0;border-radius:14px;overflow:hidden;border:1px solid var(--line);background:#000}
+.vid video{display:block;width:100%;aspect-ratio:848/478;object-fit:cover}
+.vid figcaption{font-size:.8rem;color:var(--muted);padding:8px 12px;background:var(--card2)}
 .ph-txt{position:absolute;inset:0;display:grid;place-content:center;justify-items:center;gap:8px;text-align:center;padding:20px;color:var(--muted);font-size:.9rem}
 .ph-txt svg{width:36px;height:36px;color:var(--accent)}
 .cat-body{padding:40px}
@@ -225,7 +231,7 @@ html[data-mode="day"] .hero-badge{box-shadow:0 20px 50px rgba(0,0,0,.25);animati
 /* ---------- Obras ---------- */
 .works{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:44px}
 .work{overflow:hidden}
-.work .ph{position:relative;aspect-ratio:4/3;background:repeating-linear-gradient(45deg,var(--bg2) 0 12px,var(--card2) 12px 24px);border-bottom:1px solid var(--line)}
+.work .ph{position:relative;aspect-ratio:3/4;overflow:hidden;background:repeating-linear-gradient(45deg,var(--bg2) 0 12px,var(--card2) 12px 24px);border-bottom:1px solid var(--line)}
 .work .meta{padding:18px 20px}
 .work .meta p{color:var(--muted);font-size:.9rem}
 
@@ -353,14 +359,14 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
       <div class="card quote"><small>Con luz, discreta.</small><p class="glow">En la oscuridad, brilla.</p></div>
     </div>
     <div class="reveal">
-      <div class="compare" id="compare">
-        <div class="layer scene scene-day" data-scene></div>
-        <div class="layer scene scene-night night" data-scene></div>
+      <div class="compare" style="aspect-ratio:1200/870">
+        <img class="layer" src="img/maqueta-luz.webp" alt="maqueta con pintura EcoKrom®, con luz" width="1200" height="870" loading="lazy">
+        <img class="layer night" src="img/maqueta-oscuridad.webp" alt="maqueta con pintura EcoKrom®, en la oscuridad" width="1200" height="870" loading="lazy">
         <div class="handle"></div>
-        <span class="tag l">De día</span><span class="tag r">De noche</span>
-        <input type="range" min="0" max="100" value="50" aria-label="Comparar de día y de noche">
+        <span class="tag l">Con luz</span><span class="tag r">En la oscuridad</span>
+        <input type="range" min="0" max="100" value="50" aria-label="Comparar maqueta con pintura EcoKrom® con luz y en la oscuridad">
       </div>
-      <p class="note cap">Deslizá para comparar el mismo lugar con luz y en la oscuridad.</p>
+      <p class="note cap">Maqueta pintada con EcoKrom®. Deslizá para comparar la misma escena con luz y en la oscuridad.</p>
     </div>
   </div>
 </section>
@@ -382,7 +388,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
         <h3>Fosforescencia, no fluorescencia</h3>
         <p>Una pintura fluorescente solo "brilla" mientras recibe luz UV. La fotoluminiscente <strong>sigue emitiendo cuando la luz se apaga</strong>: acumula energía durante el día y la devuelve durante la noche.</p>
       </div>
-      <div class="meter" aria-hidden="true"><div class="band"></div><div class="stripe"></div><div class="lbl"></div></div>
+      <figure class="vid"><video src="img/maqueta-video.mp4" poster="img/maqueta-video-poster.jpg" muted autoplay loop playsinline preload="metadata" aria-label="Video: maqueta pintada con EcoKrom® al apagarse la luz"></video><figcaption>Se apaga la luz y EcoKrom® sigue brillando.</figcaption></figure>
     </div>
   </div>
 </section>
@@ -398,17 +404,17 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
     </div>
     <div class="cats">
       <article class="card cat reveal" id="grafica">
-        <div class="cat-img"><div class="ph-txt"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="m21 17-5-5-8 7"/></svg>Foto: etiquetas y señalética impresa con tinta EcoKrom</div><img src="img/grafica.jpg" alt="etiquetas y señalética impresa con tinta EcoKrom" loading="lazy" onerror="this.remove()"></div>
+        <div class="cat-img contain"><div class="ph-txt"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="m21 17-5-5-8 7"/></svg>Foto: etiquetas y señalética impresa con tinta EcoKrom</div><img src="img/grafica.webp" alt="Remera estampada con tinta EcoKrom®: con luz y en la oscuridad" loading="lazy" onerror="this.remove()"></div>
         <div class="cat-body">
           <div class="eyebrow">01 · Gráfica</div>
-          <h3>Etiquetas y señalética impresa</h3>
-          <p>Tintas fotoluminiscentes para imprentas, serigrafías y talleres gráficos. Etiquetas, stickers y carteles que se leen aunque se corte la luz.</p>
-          <ul><li>Etiquetas y stickers</li><li>Señalética de seguridad</li><li>Carteles de salida y evacuación</li><li>Packaging y productos especiales</li><li>Impresión serigráfica</li><li>Papel, vinilo, PVC y acrílico*</li></ul>
+          <h3>Etiquetas, textil y señalética</h3>
+          <p>Tintas fotoluminiscentes para imprentas, serigrafías y estampadores. Remeras, etiquetas y carteles que brillan cuando se apaga la luz.</p>
+          <ul><li>Etiquetas y stickers</li><li>Señalética de seguridad</li><li>Carteles de salida y evacuación</li><li>Remeras y estampado textil</li><li>Impresión serigráfica</li><li>Papel, vinilo, PVC y acrílico*</li></ul>
           <a href="#contacto" class="btn btn-ghost" data-uso="Gráfica / etiquetas">Cotizar tintas →</a>
         </div>
       </article>
       <article class="card cat reveal" id="construccion">
-        <div class="cat-img"><div class="ph-txt"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="m21 17-5-5-8 7"/></svg>Foto: señalización y demarcación con pintura EcoKrom</div><img src="img/construccion.jpg" alt="señalización y demarcación con pintura EcoKrom" loading="lazy" onerror="this.remove()"></div>
+        <div class="cat-img"><div class="ph-txt"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="m21 17-5-5-8 7"/></svg>Foto: señalización y demarcación con pintura EcoKrom</div><img src="img/construccion.webp" alt="Pasillo de planta industrial señalizado con pintura EcoKrom® en la oscuridad" loading="lazy" onerror="this.remove()"></div>
         <div class="cat-body">
           <div class="eyebrow">02 · Construcción</div>
           <h3>Obras, edificios y espacios públicos</h3>
@@ -418,12 +424,12 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
         </div>
       </article>
       <article class="card cat reveal" id="arte">
-        <div class="cat-img"><div class="ph-txt"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="m21 17-5-5-8 7"/></svg>Foto: mural u obra de arte con pintura EcoKrom</div><img src="img/arte.jpg" alt="mural u obra de arte con pintura EcoKrom" loading="lazy" onerror="this.remove()"></div>
+        <div class="cat-img contain"><div class="ph-txt"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="m21 17-5-5-8 7"/></svg>Foto: mural u obra de arte con pintura EcoKrom</div><img src="img/arte.webp" alt="Diseño de mariposa estampado con EcoKrom®: con luz y en la oscuridad" loading="lazy" onerror="this.remove()"></div>
         <div class="cat-body">
           <div class="eyebrow">03 · Arte y diseño</div>
           <h3>Murales, decoración y piezas únicas</h3>
           <p>Para artistas, decoradores y diseñadores: obras que de día se ven de una forma y de noche revelan otra.</p>
-          <ul><li>Murales y arte urbano</li><li>Cuadros y técnicas mixtas</li><li>Decoración de interiores</li><li>Escenografía y eventos</li><li>Objetos y diseño de producto</li><li>Pincel, aerógrafo y soplete*</li></ul>
+          <ul><li>Murales y arte urbano</li><li>Cuadros y técnicas mixtas</li><li>Decoración de interiores</li><li>Escenografía y eventos</li><li>Diseño textil e indumentaria</li><li>Pincel, aerógrafo y soplete*</li></ul>
           <a href="#contacto" class="btn btn-ghost" data-uso="Arte y diseño">Consultar para mi obra →</a>
         </div>
       </article>
@@ -556,11 +562,17 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
 <!-- ================= OBRAS ================= -->
 <section id="obras" style="background:var(--bg2)">
   <div class="wrap">
-    <div class="reveal"><div class="eyebrow">Trabajos</div><h2>Trabajos realizados</h2><p class="lead">Etiquetas, obras y piezas de arte hechas con EcoKrom®, con luz y en la oscuridad.</p></div>
+    <div class="reveal"><div class="eyebrow">Trabajos</div><h2>Trabajos realizados</h2><p class="lead">Señalización hecha con EcoKrom®, con luz y en la oscuridad.</p></div>
     <div class="works">
-      <div class="card work reveal"><div class="ph"><div class="ph-txt"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="m21 17-5-5-8 7"/></svg>Foto con luz / en la oscuridad</div><img src="img/trabajo-grafica.jpg" alt="Gráfica" loading="lazy" onerror="this.remove()"></div><div class="meta"><h3>Gráfica</h3><p>Etiquetas y señalética</p></div></div>
-      <div class="card work reveal"><div class="ph"><div class="ph-txt"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="m21 17-5-5-8 7"/></svg>Foto con luz / en la oscuridad</div><img src="img/trabajo-construccion.jpg" alt="Construcción" loading="lazy" onerror="this.remove()"></div><div class="meta"><h3>Construcción</h3><p>Señalización y evacuación</p></div></div>
-      <div class="card work reveal"><div class="ph"><div class="ph-txt"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="m21 17-5-5-8 7"/></svg>Foto con luz / en la oscuridad</div><img src="img/trabajo-arte.jpg" alt="Arte y diseño" loading="lazy" onerror="this.remove()"></div><div class="meta"><h3>Arte y diseño</h3><p>Murales y decoración</p></div></div>
+      <div class="card work reveal"><div class="ph"><div class="compare fill" style="aspect-ratio:900/1261">
+        <img class="layer" src="img/planta-luz.webp" alt="planta industrial, con luz" width="900" height="1261" loading="lazy">
+        <img class="layer night" src="img/planta-oscuridad.webp" alt="planta industrial, en la oscuridad" width="900" height="1261" loading="lazy">
+        <div class="handle"></div>
+        <span class="tag l">Con luz</span><span class="tag r">En la oscuridad</span>
+        <input type="range" min="0" max="100" value="50" aria-label="Comparar planta industrial con luz y en la oscuridad">
+      </div></div><div class="meta"><h3>Planta industrial</h3><p>Rutas de circulación, escaleras y pasarelas. Deslizá para comparar.</p></div></div>
+      <div class="card work reveal"><div class="ph"><img src="img/trabajo-tunel.webp" alt="Túnel de producción con demarcación EcoKrom® en la oscuridad" loading="lazy"></div><div class="meta"><h3>Línea de producción</h3><p>Demarcación de piso, puertas y salidas.</p></div></div>
+      <div class="card work reveal"><div class="ph"><img src="img/trabajo-maqueta.webp" alt="Maqueta con senda peatonal, escalones y numeración pintados con EcoKrom® en la oscuridad" loading="lazy"></div><div class="meta"><h3>Maqueta demostrativa</h3><p>Senda peatonal, escalones y numeración.</p></div></div>
     </div>
   </div>
 </section>
@@ -687,11 +699,12 @@ bNight.onclick = () => setMode("night");
 try { const saved = localStorage.getItem("ek-mode"); if (saved) setMode(saved); } catch(e){}
 
 /* ---------- Comparador ---------- */
-const cmp = document.getElementById("compare");
-cmp.querySelector("input").addEventListener("input", e => {
-  const v = e.target.value;
-  cmp.querySelector(".night").style.clipPath = `inset(0 0 0 ${v}%)`;
-  cmp.querySelector(".handle").style.left = v + "%";
+document.querySelectorAll(".compare").forEach(cmp => {
+  cmp.querySelector("input").addEventListener("input", e => {
+    const v = e.target.value;
+    cmp.querySelector(".night").style.clipPath = `inset(0 0 0 ${v}%)`;
+    cmp.querySelector(".handle").style.left = v + "%";
+  });
 });
 
 /* ---------- Header y menú móvil ---------- */
