@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>EcoKrom® · Pintura fotoluminiscente · Tecnología del futuro</title>
-<meta name="description" content="EcoKrom®: pintura fotoluminiscente de fabricación nacional. Se carga con la luz del día y brilla durante horas, sin electricidad. Para sendas, bicisendas, evacuación e industria.">
+<title>EcoKrom® · Pinturas y tintas fotoluminiscentes · Tecnología del futuro</title>
+<meta name="description" content="EcoKrom®: pinturas y tintas fotoluminiscentes de fabricación nacional. Se cargan con la luz y brillan durante horas en la oscuridad, sin electricidad. Para gráfica, construcción y arte.">
 <meta property="og:title" content="EcoKrom® · Ilumina la noche sin electricidad">
 <meta property="og:image" content="og.jpg">
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
-<meta property="og:description" content="Pintura fotoluminiscente argentina para sendas, bicisendas, evacuación e industria.">
+<meta property="og:description" content="Pinturas y tintas fotoluminiscentes argentinas para gráfica, construcción y arte.">
 <meta name="theme-color" content="#030503">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -161,6 +161,25 @@ html[data-mode="day"] .hero-badge{box-shadow:0 20px 50px rgba(0,0,0,.25);animati
 .app a{color:var(--accent);font-weight:700;font-size:.9rem}
 .app a:hover{text-decoration:underline}
 
+/* ---------- Rubros ---------- */
+.cat-nav{display:flex;gap:10px;flex-wrap:wrap;margin-top:24px}
+.cat-nav a{border:1px solid var(--line);padding:8px 16px;border-radius:999px;font:600 .9rem Montserrat,Inter,sans-serif;transition:border-color .2s,color .2s}
+.cat-nav a:hover{border-color:var(--accent);color:var(--accent)}
+.cats{display:grid;gap:24px;margin-top:40px}
+.cat{display:grid;grid-template-columns:1fr 1.15fr;overflow:hidden;scroll-margin-top:90px}
+.cat:nth-child(even) .cat-img{order:2}
+.cat-img{position:relative;min-height:360px;background:repeating-linear-gradient(45deg,var(--bg2) 0 12px,var(--card2) 12px 24px);border-right:1px solid var(--line)}
+.cat:nth-child(even) .cat-img{border-right:0;border-left:1px solid var(--line)}
+.cat-img img,.work .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.ph-txt{position:absolute;inset:0;display:grid;place-content:center;justify-items:center;gap:8px;text-align:center;padding:20px;color:var(--muted);font-size:.9rem}
+.ph-txt svg{width:36px;height:36px;color:var(--accent)}
+.cat-body{padding:40px}
+.cat-body h3{font-size:clamp(1.5rem,2.6vw,2rem);font-weight:800;margin-bottom:12px}
+.cat-body>p{color:var(--muted);margin-bottom:20px}
+.cat-body ul{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:10px 18px;margin-bottom:26px;font-size:.95rem}
+.cat-body li{padding-left:20px;position:relative}
+.cat-body li::before{content:"";position:absolute;left:0;top:.55em;width:9px;height:9px;border-radius:50%;background:var(--accent);box-shadow:0 0 8px var(--accent)}
+
 /* ---------- Beneficios ---------- */
 .benefits{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:44px}
 .benefit{padding:28px}
@@ -206,8 +225,7 @@ html[data-mode="day"] .hero-badge{box-shadow:0 20px 50px rgba(0,0,0,.25);animati
 /* ---------- Obras ---------- */
 .works{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:44px}
 .work{overflow:hidden}
-.work .ph{aspect-ratio:4/3;display:grid;place-items:center;text-align:center;padding:20px;color:var(--muted);font-size:.9rem;background:repeating-linear-gradient(45deg,var(--bg2) 0 12px,var(--card2) 12px 24px);border-bottom:1px solid var(--line)}
-.work .ph svg{width:36px;height:36px;margin:0 auto 8px;color:var(--accent)}
+.work .ph{position:relative;aspect-ratio:4/3;background:repeating-linear-gradient(45deg,var(--bg2) 0 12px,var(--card2) 12px 24px);border-bottom:1px solid var(--line)}
 .work .meta{padding:18px 20px}
 .work .meta p{color:var(--muted);font-size:.9rem}
 
@@ -244,7 +262,8 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
 
 /* ---------- Responsive ---------- */
 @media (max-width:960px){
-  .split,.contact,.calcs,.cycle{grid-template-columns:1fr}
+  .split,.contact,.calcs,.cycle,.cat{grid-template-columns:1fr}
+  .cat .cat-img,.cat:nth-child(even) .cat-img{order:0;min-height:240px;border:0;border-bottom:1px solid var(--line)}
   .steps,.apps,.benefits,.audience,.works{grid-template-columns:1fr 1fr}
   .stats{grid-template-columns:1fr 1fr}
   .stat:nth-child(2){border-right:0}
@@ -260,7 +279,8 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
   .burger{display:block}
   .hero-badge{display:none}
   .tagline{font-size:.56rem;letter-spacing:.16em}
-  .steps,.apps,.benefits,.audience,.works,.row2{grid-template-columns:1fr}
+  .steps,.apps,.benefits,.audience,.works,.row2,.cat-body ul{grid-template-columns:1fr}
+  .cat-body{padding:26px}
   .hero::after{background:linear-gradient(0deg,var(--bg) 8%,color-mix(in srgb,var(--bg) 70%,transparent) 60%,color-mix(in srgb,var(--bg) 40%,transparent) 100%)}
   .stats{margin-top:56px}
   .stat{padding:18px}
@@ -282,7 +302,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
       <a href="#como-funciona">Cómo funciona</a>
       <a href="#aplicaciones">Aplicaciones</a>
       <a href="#ficha">Ficha técnica</a>
-      <a href="#obras">Obras</a>
+      <a href="#obras">Trabajos</a>
       <a href="#contacto" class="btn btn-primary">Pedir cotización</a>
     </nav>
     <button class="burger" id="burger" aria-label="Abrir menú" aria-expanded="false">
@@ -303,17 +323,17 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
   <div class="scene" data-scene></div>
   <div class="hero-badge"><img src="logo.webp" alt="Logo EcoKrom® — Tecnología del futuro." width="360" height="360"></div>
   <div class="wrap">
-    <div class="eyebrow">Pintura fotoluminiscente argentina</div>
-    <h1>Ilumina la noche<br><span class="glow">sin electricidad.</span></h1>
-    <p>Se carga con la luz del día y brilla durante horas. Para sendas, bicisendas, evacuación e industria.</p>
+    <div class="eyebrow">Pinturas y tintas fotoluminiscentes</div>
+    <h1>ilumina la noche<br><span class="glow">sin electricidad.</span></h1>
+    <p>Se cargan con la luz y brillan durante horas en la oscuridad. Para gráfica, construcción y arte.</p>
     <div class="ctas">
-      <a href="#calculadora" class="btn btn-primary">Calcular mi proyecto</a>
-      <a href="#aplicaciones" class="btn btn-ghost">Ver aplicaciones</a>
+      <a href="#aplicaciones" class="btn btn-primary">Ver aplicaciones</a>
+      <a href="#contacto" class="btn btn-ghost">Pedir cotización</a>
     </div>
     <div class="stats">
       <div class="stat"><b>0 kWh</b><span>consumo eléctrico</span></div>
       <div class="stat"><b>~10 h</b><span>de brillo nocturno*</span></div>
-      <div class="stat"><b>3–5 años</b><span>de vida útil*</span></div>
+      <div class="stat"><b>2 líneas</b><span>pinturas y tintas</span></div>
       <div class="stat"><b>100%</b><span>fabricación nacional</span></div>
     </div>
   </div>
@@ -325,12 +345,12 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
     <div class="prose reveal">
       <div class="eyebrow">El producto</div>
       <h2>¿Qué es <span class="glow">EcoKrom®</span>?</h2>
-      <p>Es una <strong>pintura fotoluminiscente</strong>: durante el día absorbe luz natural o artificial, la almacena y por la noche la libera como un brillo visible <strong>durante horas, sin cables ni energía eléctrica</strong>.</p>
-      <p>Formulada sobre base poliuretánica para asfalto y superficies de tránsito, está pensada para <strong>sendas peatonales, bicisendas y señalización de seguridad</strong>, con ahorro de energía y bajo impacto ambiental.</p>
+      <p>Es una línea de <strong>pinturas y tintas fotoluminiscentes</strong>: absorben luz natural o artificial, la almacenan y en la oscuridad la liberan como un brillo visible <strong>durante horas, sin cables ni energía eléctrica</strong>.</p>
+      <p>Se usan para <strong>imprimir etiquetas y señalética</strong>, para <strong>señalizar y demarcar en obras y edificios</strong> y para <strong>crear murales, piezas de arte y decoración</strong> que cambian al apagarse la luz.</p>
       <div class="chips">
-        <span class="chip">Sin electricidad</span><span class="chip">Se recarga sola con luz</span><span class="chip">Interior y exterior</span><span class="chip">Industria argentina</span>
+        <span class="chip">Pinturas</span><span class="chip">Tintas para impresión</span><span class="chip">Sin electricidad</span><span class="chip">Se recargan con luz</span><span class="chip">Industria argentina</span>
       </div>
-      <div class="card quote"><small>De día no se nota.</small><p class="glow">De noche, te guía.</p></div>
+      <div class="card quote"><small>Con luz, discreta.</small><p class="glow">En la oscuridad, brilla.</p></div>
     </div>
     <div class="reveal">
       <div class="compare" id="compare">
@@ -340,7 +360,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
         <span class="tag l">De día</span><span class="tag r">De noche</span>
         <input type="range" min="0" max="100" value="50" aria-label="Comparar de día y de noche">
       </div>
-      <p class="note cap">Deslizá para comparar el mismo lugar de día y de noche, sin alumbrado.</p>
+      <p class="note cap">Deslizá para comparar el mismo lugar con luz y en la oscuridad.</p>
     </div>
   </div>
 </section>
@@ -372,17 +392,43 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
   <div class="wrap">
     <div class="reveal">
       <div class="eyebrow">Aplicaciones</div>
-      <h2>¿Dónde se aplica?</h2>
-      <p class="lead">Cualquier superficie que necesite orientar a las personas de noche o ante un corte de luz.</p>
+      <h2>Tres rubros, <span class="glow">un mismo brillo.</span></h2>
+      <p class="lead">Pinturas para aplicar sobre casi cualquier superficie y tintas para imprimir: elegí tu rubro.</p>
+      <div class="cat-nav"><a href="#grafica">Gráfica</a><a href="#construccion">Construcción</a><a href="#arte">Arte y diseño</a></div>
     </div>
-    <div class="apps">
-      <div class="card app reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="5.5" cy="17.5" r="3.5"/><circle cx="18.5" cy="17.5" r="3.5"/><path d="M15 6h2l3 11.5M5.5 17.5 9 9h7l-4 8.5M9 9 8 6H6"/></svg></div><h3>Bicisendas y ciclovías</h3><p>Bordes, ejes y pictogramas visibles de noche, sin columnas de alumbrado.</p><a href="#contacto" data-uso="Bicisendas y ciclovías">Pedir cotización para este uso →</a></div>
-      <div class="card app reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="13" cy="4" r="2"/><path d="m9 21 3-7 3 3v4M7 12l3-4h4l2 4M12 14l-1-6"/></svg></div><h3>Sendas peatonales</h3><p>Plazas, parques, costaneras y barrios cerrados con caminos guiados.</p><a href="#contacto" data-uso="Sendas peatonales">Pedir cotización para este uso →</a></div>
-      <div class="card app reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3h6v18h-6M10 12h10M4 12l4-4M4 12l4 4"/></svg></div><h3>Evacuación y emergencia</h3><p>Escaleras, pasillos, pasamanos y salidas visibles ante cortes de luz.</p><a href="#contacto" data-uso="Evacuación y emergencia">Pedir cotización para este uso →</a></div>
-      <div class="card app reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21V10l6 4V10l6 4V4h6v17zM7 17h2M12 17h2M17 17h2"/></svg></div><h3>Industria y logística</h3><p>Demarcación de circulación, obstáculos, columnas y zonas de riesgo.</p><a href="#contacto" data-uso="Industria y logística">Pedir cotización para este uso →</a></div>
-      <div class="card app reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M9 17V7h4a3 3 0 0 1 0 6H9"/></svg></div><h3>Estacionamientos</h3><p>Subsuelos, cocheras y rampas con referencias que no dependen de la luz.</p><a href="#contacto" data-uso="Estacionamientos">Pedir cotización para este uso →</a></div>
-      <div class="card app reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22a10 10 0 1 1 10-10c0 2.8-2.2 3-4 3h-2a2 2 0 0 0-1 3.7c.6.4 1 1 1 1.6 0 1-.9 1.7-4 1.7z"/><circle cx="7.5" cy="11" r="1"/><circle cx="11" cy="7" r="1"/><circle cx="16" cy="8" r="1"/></svg></div><h3>Diseño y arte</h3><p>Murales, decoración y señalética creativa que cambia al anochecer.</p><a href="#contacto" data-uso="Diseño y arte">Pedir cotización para este uso →</a></div>
+    <div class="cats">
+      <article class="card cat reveal" id="grafica">
+        <div class="cat-img"><div class="ph-txt"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="m21 17-5-5-8 7"/></svg>Foto: etiquetas y señalética impresa con tinta EcoKrom</div><img src="img/grafica.jpg" alt="etiquetas y señalética impresa con tinta EcoKrom" loading="lazy" onerror="this.remove()"></div>
+        <div class="cat-body">
+          <div class="eyebrow">01 · Gráfica</div>
+          <h3>Etiquetas y señalética impresa</h3>
+          <p>Tintas fotoluminiscentes para imprentas, serigrafías y talleres gráficos. Etiquetas, stickers y carteles que se leen aunque se corte la luz.</p>
+          <ul><li>Etiquetas y stickers</li><li>Señalética de seguridad</li><li>Carteles de salida y evacuación</li><li>Packaging y productos especiales</li><li>Impresión serigráfica</li><li>Papel, vinilo, PVC y acrílico*</li></ul>
+          <a href="#contacto" class="btn btn-ghost" data-uso="Gráfica / etiquetas">Cotizar tintas →</a>
+        </div>
+      </article>
+      <article class="card cat reveal" id="construccion">
+        <div class="cat-img"><div class="ph-txt"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="m21 17-5-5-8 7"/></svg>Foto: señalización y demarcación con pintura EcoKrom</div><img src="img/construccion.jpg" alt="señalización y demarcación con pintura EcoKrom" loading="lazy" onerror="this.remove()"></div>
+        <div class="cat-body">
+          <div class="eyebrow">02 · Construcción</div>
+          <h3>Obras, edificios y espacios públicos</h3>
+          <p>Pinturas para señalizar y demarcar sin instalación eléctrica: guían a las personas de noche o ante un corte de luz.</p>
+          <ul><li>Escaleras, pasillos y salidas</li><li>Rutas de evacuación</li><li>Sendas peatonales y bicisendas</li><li>Demarcación industrial</li><li>Estacionamientos y subsuelos</li><li>Hormigón, metal, mampostería y asfalto*</li></ul>
+          <a href="#contacto" class="btn btn-ghost" data-uso="Construcción / señalización">Cotizar para obra →</a>
+        </div>
+      </article>
+      <article class="card cat reveal" id="arte">
+        <div class="cat-img"><div class="ph-txt"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="m21 17-5-5-8 7"/></svg>Foto: mural u obra de arte con pintura EcoKrom</div><img src="img/arte.jpg" alt="mural u obra de arte con pintura EcoKrom" loading="lazy" onerror="this.remove()"></div>
+        <div class="cat-body">
+          <div class="eyebrow">03 · Arte y diseño</div>
+          <h3>Murales, decoración y piezas únicas</h3>
+          <p>Para artistas, decoradores y diseñadores: obras que de día se ven de una forma y de noche revelan otra.</p>
+          <ul><li>Murales y arte urbano</li><li>Cuadros y técnicas mixtas</li><li>Decoración de interiores</li><li>Escenografía y eventos</li><li>Objetos y diseño de producto</li><li>Pincel, aerógrafo y soplete*</li></ul>
+          <a href="#contacto" class="btn btn-ghost" data-uso="Arte y diseño">Consultar para mi obra →</a>
+        </div>
+      </article>
     </div>
+    <p class="note" style="margin-top:16px">* Superficies y técnicas de referencia, a confirmar según el producto.</p>
   </div>
 </section>
 
@@ -391,14 +437,14 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
   <div class="wrap">
     <div class="reveal"><div class="eyebrow">Por qué elegirla</div><h2>Luz donde hace falta, <span class="glow">sin consumo.</span></h2></div>
     <div class="benefits">
-      <div class="card benefit reveal"><b>0 kWh</b><h3>Sin consumo eléctrico</h3><p>No requiere cableado, tableros ni facturas de energía.</p></div>
-      <div class="card benefit reveal"><b>~10 h</b><h3>Brillo nocturno</h3><p>Visibilidad durante la noche y ante cortes de luz.*</p></div>
-      <div class="card benefit reveal"><b>3–5 años</b><h3>Bajo mantenimiento</h3><p>Solo limpieza; renovación según el nivel de tránsito.*</p></div>
-      <div class="card benefit reveal"><b>🌱</b><h3>Menos contaminación lumínica</h3><p>Marca el suelo sin encandilar ni afectar a la fauna nocturna.</p></div>
-      <div class="card benefit reveal"><b>🛡</b><h3>Más seguridad</h3><p>Mejor orientación para peatones y ciclistas de noche.</p></div>
-      <div class="card benefit reveal"><b>🧰</b><h3>Aplicación simple</h3><p>Se aplica como una pintura de demarcación, sin obra civil.</p></div>
+      <div class="card benefit reveal"><b>0 kWh</b><h3>Sin consumo eléctrico</h3><p>No necesita cables, pilas ni instalación.</p></div>
+      <div class="card benefit reveal"><b>~10 h</b><h3>Brillo en la oscuridad</h3><p>Visible durante la noche y ante cortes de luz.*</p></div>
+      <div class="card benefit reveal"><b>∞</b><h3>Se recarga siempre</h3><p>Cada exposición a la luz la vuelve a cargar, sin perder calidad.*</p></div>
+      <div class="card benefit reveal"><b>🖨</b><h3>Pintar o imprimir</h3><p>Pintura para superficies y tinta para impresión gráfica.</p></div>
+      <div class="card benefit reveal"><b>🛡</b><h3>Más seguridad</h3><p>Salidas, escaleras y obstáculos visibles en la oscuridad.</p></div>
+      <div class="card benefit reveal"><b>🌱</b><h3>Bajo impacto</h3><p>Sin energía ni contaminación lumínica.</p></div>
     </div>
-    <p class="note" style="margin-top:18px">* Valores de referencia de pinturas fotoluminiscentes profesionales. Se actualizarán con los resultados de ensayo de EcoKrom®.</p>
+    <p class="note" style="margin-top:18px">* Valores de referencia de productos fotoluminiscentes. Se actualizarán con los resultados de ensayo de EcoKrom®.</p>
   </div>
 </section>
 
@@ -408,21 +454,22 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
     <div class="reveal">
       <div class="eyebrow">Ficha técnica</div>
       <h2>Características técnicas</h2>
-      <p class="lead">Datos de referencia. Los marcados como "a confirmar" se publicarán con los ensayos propios del producto.</p>
+      <p class="lead">Datos de referencia. Los marcados como "a confirmar" se publicarán con los ensayos propios de cada producto.</p>
     </div>
     <div class="table-wrap reveal">
       <table class="table">
         <thead><tr><th>Característica</th><th>Valor</th><th>Estado</th></tr></thead>
         <tbody>
-          <tr><td>Tipo de producto</td><td>Pintura fotoluminiscente (fosforescente) de alta luminosidad, base poliuretánica</td><td><span class="badge ok">Confirmado</span></td></tr>
-          <tr><td>Tiempo de brillo</td><td>Hasta 10 h visible en oscuridad total (verde); ~6 h en blanco, amarillo y azul. En interiores oscuros, más de 12 h</td><td><span class="badge wait">A confirmar</span></td></tr>
-          <tr><td>Carga</td><td>Con luz natural o artificial; carga completa durante el día, incluso nublado o en sombra</td><td><span class="badge wait">A confirmar</span></td></tr>
+          <tr><td>Productos</td><td>Pintura fotoluminiscente y tinta fotoluminiscente para impresión</td><td><span class="badge ok">Confirmado</span></td></tr>
+          <tr><td>Tiempo de brillo</td><td>Hasta ~10 h visible en oscuridad total (verde); menor en otros colores</td><td><span class="badge wait">A confirmar</span></td></tr>
+          <tr><td>Carga</td><td>Con luz natural o artificial, incluso nublado o en sombra. Se recarga indefinidamente</td><td><span class="badge wait">A confirmar</span></td></tr>
           <tr><td>Colores</td><td>Verde (máxima duración), blanco, amarillo, azul</td><td><span class="badge wait">A confirmar</span></td></tr>
-          <tr><td>Rendimiento</td><td>800–900 g/m² de pintura sobre base blanca de al menos 400 g/m²</td><td><span class="badge wait">A confirmar</span></td></tr>
-          <tr><td>Aplicación</td><td>Máquina airless o soplete (grandes superficies); pincel o rodillo con dilución y varias manos. Superficie seca y sin humedad</td><td><span class="badge wait">A confirmar</span></td></tr>
-          <tr><td>Superficies</td><td>Asfalto, hormigón, cemento, metal, mampostería y paredes</td><td><span class="badge wait">A confirmar</span></td></tr>
-          <tr><td>Durabilidad</td><td>Renovación cada 3 a 5 años en tránsito vehicular; 5 años en sendas peatonales</td><td><span class="badge wait">A confirmar</span></td></tr>
-          <tr><td>Seguridad</td><td>Versión solvente: inflamable. Consultar la hoja de seguridad antes de usar</td><td><span class="badge ok">Confirmado</span></td></tr>
+          <tr><td>Pintura · superficies</td><td>Hormigón, cemento, metal, madera, mampostería, asfalto y paredes</td><td><span class="badge wait">A confirmar</span></td></tr>
+          <tr><td>Pintura · aplicación</td><td>Pincel, rodillo, aerógrafo, soplete o airless. Sobre base blanca para máximo brillo</td><td><span class="badge wait">A confirmar</span></td></tr>
+          <tr><td>Tinta · soportes</td><td>Papel, cartulina, vinilo autoadhesivo, PVC, acrílico y tela</td><td><span class="badge wait">A confirmar</span></td></tr>
+          <tr><td>Tinta · impresión</td><td>Serigrafía</td><td><span class="badge wait">A confirmar</span></td></tr>
+          <tr><td>Uso</td><td>Interior y exterior. Durabilidad según superficie, tránsito y exposición</td><td><span class="badge wait">A confirmar</span></td></tr>
+          <tr><td>Seguridad</td><td>Consultar la hoja de seguridad de cada producto antes de usar</td><td><span class="badge ok">Confirmado</span></td></tr>
         </tbody>
       </table>
     </div>
@@ -440,23 +487,23 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
     <div class="reveal">
       <div class="eyebrow">Herramientas</div>
       <h2>Calculá tu proyecto</h2>
-      <p class="lead">Una estimación rápida para saber cuánto material necesitás y cuánto ahorrás frente a instalar luminarias.</p>
+      <p class="lead">Una estimación rápida de pintura para tu superficie y, para obras públicas, del ahorro frente a instalar luminarias.</p>
     </div>
     <div class="calcs">
       <!-- Calculadora de material -->
       <div class="card calc reveal">
         <h3>¿Cuánta pintura necesito?</h3>
-        <p>Con rendimientos de referencia.</p>
+        <p>Pintura sobre superficies, con rendimientos de referencia. Para tintas de impresión, consultanos.</p>
         <div class="field"><label for="cType">Tipo de proyecto</label>
           <select id="cType">
-            <option value="line">Línea (borde de bicisenda, eje, demarcación)</option>
-            <option value="area">Superficie (senda completa, escalones, muro)</option>
+            <option value="area">Superficie (muro, mural, escalones, piso)</option>
+            <option value="line">Línea o franja (demarcación, borde, guía)</option>
           </select></div>
-        <div class="row2" id="lineFields">
+        <div class="row2 hidden" id="lineFields">
           <div class="field"><label for="cLen">Metros lineales</label><input id="cLen" type="number" min="0" value="1000"></div>
           <div class="field"><label for="cWidth">Ancho de línea (cm)</label><input id="cWidth" type="number" min="1" value="10"></div>
         </div>
-        <div class="field hidden" id="areaFields"><label for="cArea">Superficie (m²)</label><input id="cArea" type="number" min="0" value="50"></div>
+        <div class="field" id="areaFields"><label for="cArea">Superficie (m²)</label><input id="cArea" type="number" min="0" value="50"></div>
         <div class="field"><label for="cColor">Color</label>
           <select id="cColor">
             <option value="Verde">Verde (máxima duración)</option><option value="Blanco">Blanco</option><option value="Amarillo">Amarillo</option><option value="Azul">Azul</option>
@@ -472,8 +519,8 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
 
       <!-- Calculadora de ahorro -->
       <div class="card calc reveal">
-        <h3>¿Cuánto ahorro frente a luminarias?</h3>
-        <p>Comparación con alumbrado LED convencional. Ideal para municipios.</p>
+        <h3>Obras públicas: ¿cuánto ahorro?</h3>
+        <p>Senda o bicisenda señalizada con EcoKrom® frente a alumbrado LED convencional.</p>
         <div class="row2">
           <div class="field"><label for="sKm">Largo de la senda (km)</label><input id="sKm" type="number" min="0" step="0.1" value="1"></div>
           <div class="field"><label for="sSep">Separación entre columnas (m)</label><input id="sSep" type="number" min="5" value="30"></div>
@@ -497,11 +544,11 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
 <!-- ================= PÚBLICOS ================= -->
 <section>
   <div class="wrap">
-    <div class="reveal"><div class="eyebrow">Para profesionales</div><h2>Todo lo que necesitás para especificarla</h2></div>
+    <div class="reveal"><div class="eyebrow">Para profesionales</div><h2>Te acompañamos en tu proyecto</h2></div>
     <div class="audience">
-      <div class="card aud reveal"><h3>🏛 Municipios</h3><p>Dossier para licitaciones y proyectos de movilidad urbana.</p><ul><li>Ficha técnica y ensayos</li><li>Antecedentes de obra</li><li>Modelo de pliego técnico</li></ul></div>
-      <div class="card aud reveal"><h3>🏗 Arquitectos e industria</h3><p>Especificación lista para incorporar al proyecto.</p><ul><li>Texto de especificación técnica</li><li>Guía de aplicación paso a paso</li><li>Asesoramiento en obra</li></ul></div>
-      <div class="card aud reveal"><h3>📦 Kit de muestra</h3><p>Probalo antes de decidir: pedí una muestra o un panel de demostración.</p><ul><li>Panel de prueba día/noche</li><li>Muestras por color</li><li>Prueba en tu propia superficie</li></ul><a class="btn btn-ghost" style="margin-top:18px" href="#contacto" data-uso="Kit de muestra">Pedir muestra</a></div>
+      <div class="card aud reveal"><h3>🖨 Imprentas y gráficas</h3><p>Tinta lista para producción, con asesoramiento técnico.</p><ul><li>Venta por cantidad</li><li>Pruebas de impresión</li><li>Soporte en serigrafía</li></ul></div>
+      <div class="card aud reveal"><h3>🏗 Construcción y municipios</h3><p>Documentación para especificar y licitar.</p><ul><li>Ficha técnica y ensayos</li><li>Texto para pliegos</li><li>Asesoramiento en obra</li></ul></div>
+      <div class="card aud reveal"><h3>📦 Kit de muestra</h3><p>Probá pintura y tinta antes de decidir.</p><ul><li>Muestras por color</li><li>Panel de prueba luz/oscuridad</li><li>Prueba en tu propio soporte</li></ul><a class="btn btn-ghost" style="margin-top:18px" href="#contacto" data-uso="Kit de muestra">Pedir muestra</a></div>
     </div>
   </div>
 </section>
@@ -509,11 +556,11 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
 <!-- ================= OBRAS ================= -->
 <section id="obras" style="background:var(--bg2)">
   <div class="wrap">
-    <div class="reveal"><div class="eyebrow">Obras</div><h2>Proyectos en Argentina</h2><p class="lead">Galería de obras realizadas con fotos de día y de noche, ubicación y metros aplicados.</p></div>
+    <div class="reveal"><div class="eyebrow">Trabajos</div><h2>Trabajos realizados</h2><p class="lead">Etiquetas, obras y piezas de arte hechas con EcoKrom®, con luz y en la oscuridad.</p></div>
     <div class="works">
-      <div class="card work reveal"><div class="ph"><div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="m21 17-5-5-8 7"/></svg>Foto día / noche<br>próximamente</div></div><div class="meta"><h3>Bicisenda</h3><p>Ubicación · metros · fecha</p></div></div>
-      <div class="card work reveal"><div class="ph"><div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="m21 17-5-5-8 7"/></svg>Foto día / noche<br>próximamente</div></div><div class="meta"><h3>Escalera de evacuación</h3><p>Ubicación · metros · fecha</p></div></div>
-      <div class="card work reveal"><div class="ph"><div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="m21 17-5-5-8 7"/></svg>Foto día / noche<br>próximamente</div></div><div class="meta"><h3>Senda peatonal</h3><p>Ubicación · metros · fecha</p></div></div>
+      <div class="card work reveal"><div class="ph"><div class="ph-txt"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="m21 17-5-5-8 7"/></svg>Foto con luz / en la oscuridad</div><img src="img/trabajo-grafica.jpg" alt="Gráfica" loading="lazy" onerror="this.remove()"></div><div class="meta"><h3>Gráfica</h3><p>Etiquetas y señalética</p></div></div>
+      <div class="card work reveal"><div class="ph"><div class="ph-txt"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="m21 17-5-5-8 7"/></svg>Foto con luz / en la oscuridad</div><img src="img/trabajo-construccion.jpg" alt="Construcción" loading="lazy" onerror="this.remove()"></div><div class="meta"><h3>Construcción</h3><p>Señalización y evacuación</p></div></div>
+      <div class="card work reveal"><div class="ph"><div class="ph-txt"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="m21 17-5-5-8 7"/></svg>Foto con luz / en la oscuridad</div><img src="img/trabajo-arte.jpg" alt="Arte y diseño" loading="lazy" onerror="this.remove()"></div><div class="meta"><h3>Arte y diseño</h3><p>Murales y decoración</p></div></div>
     </div>
   </div>
 </section>
@@ -523,11 +570,11 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
   <div class="wrap">
     <div class="reveal"><div class="eyebrow">Preguntas frecuentes</div><h2>Lo que más nos consultan</h2></div>
     <div class="faq">
-      <details class="card reveal"><summary>¿Cuánto tiempo brilla?</summary><p>En color verde, hasta unas 10 horas visibles en oscuridad total. El brillo es más intenso al anochecer y va bajando de forma gradual durante la noche.</p></details>
-      <details class="card reveal"><summary>¿Necesita sol directo para cargarse?</summary><p>No. Se carga con luz natural o artificial, incluso con cielo nublado o en sombra. Cuanta más luz recibe, más intenso es el brillo nocturno.</p></details>
-      <details class="card reveal"><summary>¿Se puede pisar y transitar?</summary><p>Sí. Está pensada para sendas, bicisendas y superficies de tránsito. La frecuencia de renovación depende del nivel de uso: entre 3 y 5 años como referencia.</p></details>
-      <details class="card reveal"><summary>¿Sobre qué superficies se aplica?</summary><p>Asfalto, hormigón, cemento, metal, mampostería y paredes. Se aplica sobre una base blanca para obtener el máximo rendimiento lumínico.</p></details>
-      <details class="card reveal"><summary>¿Cómo se aplica?</summary><p>Con máquina airless o soplete en grandes superficies, o con pincel o rodillo en trabajos chicos. La superficie debe estar limpia, seca y sin humedad.</p></details>
+      <details class="card reveal"><summary>¿Cuánto tiempo brilla?</summary><p>En color verde, hasta unas 10 horas visibles en oscuridad total. El brillo es más intenso al principio y va bajando de forma gradual.</p></details>
+      <details class="card reveal"><summary>¿Qué diferencia hay entre la pintura y la tinta?</summary><p>La pintura se aplica sobre superficies (paredes, pisos, metal, madera, obras de arte). La tinta está formulada para imprimir etiquetas, stickers y carteles en procesos gráficos como la serigrafía.</p></details>
+      <details class="card reveal"><summary>¿Necesita sol directo para cargarse?</summary><p>No. Se carga con luz natural o artificial, incluso con cielo nublado o en interiores iluminados. Cuanta más luz recibe, más intenso es el brillo.</p></details>
+      <details class="card reveal"><summary>¿Sobre qué materiales se puede usar?</summary><p>La pintura, sobre hormigón, cemento, metal, madera, mampostería y asfalto. La tinta, sobre papel, cartulina, vinilo, PVC, acrílico y tela. Para máximo brillo, conviene una base blanca.</p></details>
+      <details class="card reveal"><summary>¿Sirve para interior y exterior?</summary><p>Sí. La durabilidad depende de la superficie, el tránsito y la exposición. Te asesoramos según tu proyecto.</p></details>
       <details class="card reveal"><summary>¿Es lo mismo que una pintura fluorescente?</summary><p>No. La fluorescente solo se ve mientras recibe luz UV. La fotoluminiscente acumula energía y la sigue emitiendo cuando la luz se apaga.</p></details>
     </div>
   </div>
@@ -539,7 +586,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
     <div class="reveal">
       <div class="eyebrow">Contacto</div>
       <h2>Pedí tu <span class="glow">cotización</span></h2>
-      <p class="lead">Contanos qué querés pintar y te respondemos con una propuesta a medida.</p>
+      <p class="lead">Contanos qué querés pintar o imprimir y te respondemos con una propuesta a medida.</p>
       <div class="contact-list">
         <a class="card" id="waLink" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.5-3.9-4.7-4.1-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.1.3.6 1 1.3 1.7.9.8 1.7 1.1 2 1.2.2.1.4.1.5-.1l.7-.9c.2-.2.4-.2.6-.1l1.9.9c.3.1.4.2.5.3.1.2.1.7-.1 1.4z"/></svg><span><b>WhatsApp</b><br><span class="note">Respuesta rápida</span></span></a>
         <a class="card" id="mailLink"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg><span><b id="mailText">Email</b><br><span class="note">Para pliegos y documentación</span></span></a>
@@ -552,10 +599,10 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
       </div>
       <div class="row2">
         <div class="field"><label for="fUso">Uso</label>
-          <select id="fUso"><option>Bicisendas y ciclovías</option><option>Sendas peatonales</option><option>Evacuación y emergencia</option><option>Industria y logística</option><option>Estacionamientos</option><option>Diseño y arte</option><option>Kit de muestra</option><option>Ficha técnica (PDF)</option><option>Hoja de seguridad</option><option>Guía de aplicación</option><option>Otro</option></select></div>
+          <select id="fUso"><option>Gráfica / etiquetas</option><option>Construcción / señalización</option><option>Arte y diseño</option><option>Kit de muestra</option><option>Ficha técnica (PDF)</option><option>Hoja de seguridad</option><option>Guía de aplicación</option><option>Otro</option></select></div>
         <div class="field"><label for="fLoc">Localidad</label><input id="fLoc"></div>
       </div>
-      <div class="field"><label for="fMsg">Contanos tu proyecto</label><textarea id="fMsg" rows="4" placeholder="Metros, superficie, plazos…"></textarea></div>
+      <div class="field"><label for="fMsg">Contanos tu proyecto</label><textarea id="fMsg" rows="4" placeholder="Producto, cantidad, superficie o soporte, plazos…"></textarea></div>
       <button class="btn btn-primary" type="submit" style="width:100%;justify-content:center">Enviar por WhatsApp</button>
     </form>
   </div>
@@ -564,7 +611,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
 
 <footer>
   <div class="wrap">
-    <div><b class="wordmark" style="font-size:1rem">EcoKrom<sup>®</sup></b> · Tecnología del futuro. · Pintura fotoluminiscente · Industria argentina</div>
+    <div><b class="wordmark" style="font-size:1rem">EcoKrom<sup>®</sup></b> · Tecnología del futuro. · Pinturas y tintas fotoluminiscentes · Industria argentina</div>
     <div>© <span id="year"></span> EcoKrom® · Marca registrada · Sitio desarrollado por Grand Tech Informática</div>
   </div>
 </footer>
@@ -694,7 +741,7 @@ function savings(){
 savings();
 
 /* ---------- Contacto ---------- */
-$("waLink").href = $("waFloat").href = wa("Hola, quiero información sobre la pintura fotoluminiscente EcoKrom®.");
+$("waLink").href = $("waFloat").href = wa("Hola, quiero información sobre las pinturas y tintas fotoluminiscentes EcoKrom®.");
 $("mailLink").href = "mailto:" + CONFIG.email;
 $("mailText").textContent = CONFIG.email;
 document.querySelectorAll("[data-uso]").forEach(a => a.addEventListener("click", () => { $("fUso").value = a.dataset.uso; }));
