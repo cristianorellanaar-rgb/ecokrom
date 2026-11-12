@@ -235,6 +235,16 @@ html[data-mode="day"] .hero-badge{box-shadow:0 20px 50px rgba(0,0,0,.25);animati
 .work .meta{padding:18px 20px}
 .work .meta p{color:var(--muted);font-size:.9rem}
 
+.work-feature{display:grid;grid-template-columns:minmax(0,360px) 1fr;margin-top:18px;overflow:hidden;align-items:center}
+.wf-vid{margin:0;background:#000;height:100%}
+.wf-vid video{display:block;width:100%;aspect-ratio:9/16;object-fit:cover}
+.wf-body{padding:40px}
+.wf-body h3{font-size:clamp(1.5rem,2.6vw,2rem);font-weight:800;margin-bottom:12px}
+.wf-body>p{color:var(--muted);margin-bottom:20px;max-width:520px}
+.wf-body ul{list-style:none;display:grid;gap:10px;margin-bottom:26px;font-size:.95rem}
+.wf-body li{padding-left:20px;position:relative}
+.wf-body li::before{content:"";position:absolute;left:0;top:.55em;width:9px;height:9px;border-radius:50%;background:var(--accent);box-shadow:0 0 8px var(--accent)}
+
 /* ---------- FAQ ---------- */
 .faq{max-width:820px;margin-top:40px;display:grid;gap:12px}
 .faq details{padding:0 24px}
@@ -268,7 +278,9 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
 
 /* ---------- Responsive ---------- */
 @media (max-width:960px){
-  .split,.contact,.calcs,.cycle,.cat{grid-template-columns:1fr}
+  .split,.contact,.calcs,.cycle,.cat,.work-feature{grid-template-columns:1fr}
+  .wf-vid{height:auto}
+  .wf-vid video{max-height:70vh;aspect-ratio:auto;margin:0 auto;width:auto;max-width:100%}
   .cat .cat-img,.cat:nth-child(even) .cat-img{order:0;min-height:240px;border:0;border-bottom:1px solid var(--line)}
   .steps,.apps,.benefits,.audience,.works{grid-template-columns:1fr 1fr}
   .stats{grid-template-columns:1fr 1fr}
@@ -562,7 +574,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
 <!-- ================= OBRAS ================= -->
 <section id="obras" style="background:var(--bg2)">
   <div class="wrap">
-    <div class="reveal"><div class="eyebrow">Trabajos</div><h2>Trabajos realizados</h2><p class="lead">Señalización hecha con EcoKrom®, con luz y en la oscuridad.</p></div>
+    <div class="reveal"><div class="eyebrow">Trabajos</div><h2>Trabajos realizados</h2><p class="lead">Señalización y gráfica hechas con EcoKrom®, con luz y en la oscuridad.</p></div>
     <div class="works">
       <div class="card work reveal"><div class="ph"><div class="compare fill" style="aspect-ratio:900/1261">
         <img class="layer" src="img/planta-luz.webp" alt="planta industrial, con luz" width="900" height="1261" loading="lazy">
@@ -574,6 +586,16 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
       <div class="card work reveal"><div class="ph"><img src="img/trabajo-tunel.webp" alt="Túnel de producción con demarcación EcoKrom® en la oscuridad" loading="lazy"></div><div class="meta"><h3>Línea de producción</h3><p>Demarcación de piso, puertas y salidas.</p></div></div>
       <div class="card work reveal"><div class="ph"><img src="img/trabajo-maqueta.webp" alt="Maqueta con senda peatonal, escalones y numeración pintados con EcoKrom® en la oscuridad" loading="lazy"></div><div class="meta"><h3>Maqueta demostrativa</h3><p>Senda peatonal, escalones y numeración.</p></div></div>
     </div>
+    <article class="card work-feature reveal">
+      <figure class="wf-vid"><video src="img/etiqueta-video.mp4" poster="img/etiqueta-video-poster.jpg" muted autoplay loop playsinline preload="metadata" aria-label="Video: etiqueta impresa con tinta fotoluminiscente, con luz y al apagarse la luz"></video></figure>
+      <div class="wf-body">
+        <div class="eyebrow">Gráfica · Video</div>
+        <h3>Etiqueta de edición especial</h3>
+        <p>Etiqueta impresa con tinta fotoluminiscente. Con luz se ve como cualquier etiqueta; cuando se apaga la luz, el logo brilla en la oscuridad.</p>
+        <ul><li>Impresión sobre etiqueta</li><li>Brillo solo en el diseño elegido</li><li>Sin cambiar el aspecto con luz</li></ul>
+        <a href="#contacto" class="btn btn-ghost" data-uso="Gráfica / etiquetas">Cotizar etiquetas →</a>
+      </div>
+    </article>
   </div>
 </section>
 
