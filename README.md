@@ -15,7 +15,7 @@ Sitio estático en un solo archivo (`index.html`), publicado con GitHub Pages.
 
 ## Pendiente con el cliente
 
-- Número de WhatsApp y email reales: editar el bloque `CONFIG` al final de `index.html`
+- Email de contacto real: editar el bloque `CONFIG` al final de `index.html` (WhatsApp ya cargado: 11 3261-3024)
 - Más fotos de trabajos reales (sobre todo de **arte** y de **etiquetas**) para sumar a `img/`
 - Dominio definitivo
 
